@@ -41,7 +41,7 @@ for i in range(1, 35):
 	# result = get_1(i)
 	# tab = [0] * i; tab[1] = 1; result = get_2(i)
 	# print(tab)
-	# tab = [0, 1] + [0] * i;	result = get_3(i)
+	tab = [0, 1] + [0] * i;	result = get_3(i)
 	result = get_4(i)
 	finish = time.monotonic()
 

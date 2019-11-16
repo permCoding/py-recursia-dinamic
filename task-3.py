@@ -29,7 +29,7 @@ def get_2(n, m): # рекурсия с кэшированием - сделать
 	return 0
 
 
-def get_3(n, m): # динамика - 
+def get_3(n, m): # динамика -
 	tab = [0] * (n + 1)
 	tab[0] = 1 # солдатик, стоящий на клетке 1 имеет один путь
 	for pos in range(n):
@@ -40,10 +40,19 @@ def get_3(n, m): # динамика -
 	return tab[n]
 
 
-n = 5 # размер доски
-n -= 1 # длина пути = размер доски - 1 (так как на 1 клетке уже стоит солдатик)
-m = 3 # длина максимального шага
+import time
 
-print('get_1 = %5d' % (get_1(n, m)))
-print('get_2 = %5d' % (get_2(n, m)))
-print('get_3 = %5d' % (get_3(n, m)))
+n = 125 # размер доски
+n -= 1 # длина пути = размер доски - 1 (так как на 1 клетке уже стоит солдатик)
+m = 13 # длина максимального шага
+
+start = time.monotonic()
+# print('get_1 = %5d' % (get_1(n, m)))
+# print('get_2 = %5d' % (get_2(n, m)))
+# print('get_3 = %5d' % (get_3(n, m)))
+result = get_3(n, m)
+finish = time.monotonic()
+
+dif = finish - start
+
+print('%3d%3d%12d\t%10.3f' % (n, m, result, dif))
